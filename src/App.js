@@ -4,9 +4,10 @@ import Footer from "./Components/Footer";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Projects from "./Components/Projects";
+
 function App() {
   return (
-    <div className="App flex flex-col min-h-screen">
+    <div className="App flex flex-col min-h-screen min-w-screen ">
       <Navbar />
       <div className="flex-1">
         <Hero />
