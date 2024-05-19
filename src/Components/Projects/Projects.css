@@ -12,6 +12,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .item {
@@ -21,7 +23,7 @@
   padding: 20px;
   margin: 10px;
   cursor: pointer;
-  width: 500px;
+  width: 300px;
 }
 
 .expanded-item {
