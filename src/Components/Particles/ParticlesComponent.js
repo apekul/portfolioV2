@@ -37,7 +37,7 @@ export const ParticlesComponent = () => {
           value: "#27272A",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 60,
       interactivity: {
         events: {
           onClick: {
@@ -85,8 +85,8 @@ export const ParticlesComponent = () => {
           density: {
             enable: true,
           },
-          value: 350,
-          limit: 350,
+          value: 200,
+          limit: 200,
         },
         opacity: {
           value: 0.5,
