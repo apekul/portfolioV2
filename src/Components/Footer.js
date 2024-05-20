@@ -15,7 +15,7 @@ function Footer() {
         <li>Mail</li>
         <li>Cv</li>
       </ul>
-      <ul className="Container bg-[#27272A] py-5 font-bold flex items-center justify-between">
+      <ul className="Container bg-[#27272A] py-5 font-bold flex flex-col-reverse md:flex-row gap-3 items-center justify-between">
         <li>
           Copyright © 2024{" "}
           <a

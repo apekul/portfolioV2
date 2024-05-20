@@ -55,7 +55,7 @@ export const ParticlesComponent = () => {
             limit: 250,
           },
           repulse: {
-            distance: 100,
+            distance: 60,
             duration: 0.4,
           },
         },

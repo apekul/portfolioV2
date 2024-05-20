@@ -5,7 +5,7 @@ import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 import Tech from "./Tech";
 function Hero() {
   return (
-    <div id="hero" className="h-screen relative overflow-hidden">
+    <div id="hero" className="lg:h-screen h-full relative overflow-hidden">
       <div
         className="particles-container"
         style={{
@@ -19,10 +19,12 @@ function Hero() {
       >
         <ParticlesComponent />
       </div>
-      <div className="Container h-full w-auto  flex items-center justify-center">
-        <div className="flex bg-white p-5 rounded-md shadow-md gap-5 bg-opacity-70">
-          <ul className="text-xl w-[30rem] flex flex-col justify-between">
-            <li className="font-bold text-5xl w-[20rem]">
+      <div className="Container h-full my-20 lg:my-0 w-auto flex items-center justify-center">
+        <div
+          className={`flex bg-white p-5 rounded-md shadow-md bg-opacity-70 flex-col-reverse lg:flex-row gap-3 items-center lg:items-start`}
+        >
+          <ul className="text-xl max-w-[30rem] flex flex-col lg:items-start lg:text-start items-center text-center gap-5 justify-between">
+            <li className="font-bold text-5xl lg:w-[20rem] ">
               Front-End Developer.
             </li>
             <li className="font-semibold">

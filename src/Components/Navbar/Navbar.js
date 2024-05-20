@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaCode } from "react-icons/fa6";
+import MobileNav from "./MobileNav";
 
 const nav = [
   { text: "Home", location: "" },
@@ -14,7 +15,7 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const threshold = 100; // Adjust this value as needed
+      const threshold = 100;
 
       // Check if the user has scrolled down past the threshold
       if (scrollTop > threshold) {
@@ -33,7 +34,7 @@ function Navbar() {
   }, []);
   return (
     <nav
-      className={`Container h-[3rem] flex items-center fixed top-0 w-full z-10 transition-colors duration-200 ${
+      className={`Container h-[3rem] flex items-center fixed w-full z-10 transition-colors duration-200 ${
         scrolled ? "bg-white shadow-md text-black" : "text-white"
       }`}
     >
@@ -41,7 +42,7 @@ function Navbar() {
         <li>
           <FaCode size={25} />
         </li>
-        <li className="flex gap-5">
+        <li className="gap-5 hidden lg:flex">
           {nav.map((v, i) => (
             <a
               key={i}
@@ -51,6 +52,9 @@ function Navbar() {
               {v.text}
             </a>
           ))}
+        </li>
+        <li className="flex lg:hidden">
+          <MobileNav nav={nav} />
         </li>
       </ul>
     </nav>
