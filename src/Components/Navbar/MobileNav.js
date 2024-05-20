@@ -6,12 +6,14 @@ const MobileNav = ({ nav }) => {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <nav className="flex justify-end font-bold text-zinc-600">
+    <nav className="flex justify-end font-bold text-zinc-600 w-full">
       <GiHamburgerMenu size="30" onClick={() => setShowNav(true)} />
       {/* {showNav && ( */}
       <ul
         className={`absolute flex lg:hidden flex-col items-end top-0 bg-zinc-100 text-3xl w-screen h-screen px-4 pt-3 gap-10 duration-500 transition-all
-      ${showNav ? "right-0" : "-right-[50rem]"}`}
+      ${showNav ? "right-0" : "-right-full"}
+      ${showNav ? "" : "opacity-0 invisible"}
+      `}
       >
         <AiOutlineClose
           size="30"

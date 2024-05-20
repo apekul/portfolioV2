@@ -24,7 +24,7 @@ function Hero() {
           className={`flex bg-white p-5 rounded-md shadow-md bg-opacity-70 flex-col-reverse lg:flex-row gap-3 items-center lg:items-start`}
         >
           <ul className="text-xl max-w-[30rem] flex flex-col lg:items-start lg:text-start items-center text-center gap-5 justify-between">
-            <li className="font-bold text-5xl lg:w-[20rem] ">
+            <li className="font-bold text-3xl lg:text-5xl lg:w-[20rem] ">
               Front-End Developer.
             </li>
             <li className="font-semibold">
