@@ -5,13 +5,12 @@ import "./Projects.css";
 function Projects() {
   const [selectedId, setSelectedId] = useState(null);
   const items = [
-    { id: "1", title: "Title 1", subtitle: "Subtitle 1" },
-    { id: "2", title: "Title 2", subtitle: "Subtitle 2" },
-    { id: "3", title: "Title 3", subtitle: "Subtitle 3" },
-    { id: "4", title: "Title 3", subtitle: "Subtitle 3" },
-    { id: "5", title: "Title 3", subtitle: "Subtitle 3" },
-    { id: "6", title: "Title 3", subtitle: "Subtitle 3" },
-    { id: "7", title: "Title 3", subtitle: "Subtitle 3" },
+    { id: "1", title: "E-commerce", subtitle: "Subtitle 1" },
+    { id: "2", title: "Billater", subtitle: "Subtitle 2" },
+    { id: "3", title: "Drinkology", subtitle: "Subtitle 3" },
+    { id: "4", title: "Task Management App", subtitle: "Subtitle 3" },
+    { id: "5", title: "JobBoard", subtitle: "Subtitle 3" },
+    { id: "6", title: "Weather App", subtitle: "Subtitle 3" },
   ];
 
   // Function to toggle selectedId
@@ -23,9 +22,9 @@ function Projects() {
     }
   };
   return (
-    <div id="projects" className="ProjectsContainer Container bg-red-200 py-10">
+    <div id="projects" className="ProjectsContainer Container py-10 ">
       Projects
-      <div className="items-container">
+      <div className="w-[1200px] bg-red-200 grid grid-cols-3 h-[40rem] relative">
         {items.map((item) => (
           <motion.div
             key={item.id}
