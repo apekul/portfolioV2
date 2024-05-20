@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaCode } from "react-icons/fa6";
 
 const nav = [
@@ -9,8 +9,34 @@ const nav = [
 ];
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const threshold = 100; // Adjust this value as needed
+
+      // Check if the user has scrolled down past the threshold
+      if (scrollTop > threshold) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <nav className="Container h-[3rem] flex items-center shadow-md sticky top-0 w-full z-0 bg-white">
+    <nav
+      className={`Container h-[3rem] flex items-center fixed top-0 w-full z-10 transition-colors duration-200 ${
+        scrolled ? "bg-white shadow-md text-black" : "text-white"
+      }`}
+    >
       <ul className="flex items-center justify-between w-full">
         <li>
           <FaCode size={25} />

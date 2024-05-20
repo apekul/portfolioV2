@@ -1,9 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadSlim } from "@tsparticles/slim";
 
 export const ParticlesComponent = () => {
   const [init, setInit] = useState(false);
@@ -44,7 +41,7 @@ export const ParticlesComponent = () => {
       interactivity: {
         events: {
           onClick: {
-            enable: true,
+            enable: false,
             mode: "push",
           },
           onHover: {
@@ -55,6 +52,7 @@ export const ParticlesComponent = () => {
         modes: {
           push: {
             quantity: 4,
+            limit: 250,
           },
           repulse: {
             distance: 100,
@@ -64,10 +62,10 @@ export const ParticlesComponent = () => {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: "#808e9b",
         },
         links: {
-          color: "#ffffff",
+          color: "#d2dae2",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -87,7 +85,8 @@ export const ParticlesComponent = () => {
           density: {
             enable: true,
           },
-          value: 200,
+          value: 350,
+          limit: 350,
         },
         opacity: {
           value: 0.5,
