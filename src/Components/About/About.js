@@ -13,7 +13,7 @@ function About() {
           <h2 className="font-bold text-2xl">Technology I Work With</h2>
           <TechStack />
         </div>
-        <div className="w-full lg:w-2/3 bg-gray-200 p-5 rounded-md text-center lg:text-start">
+        <div className="w-full lg:w-2/3 bg-gray-100 p-5 rounded-md text-center lg:text-start shadow-md">
           <div className="flex flex-col items-center lg:items-start">
             <h1 className="font-bold text-4xl ">About Me</h1>
             <div className="text-green-500 flex items-center gap-2 py-2 font-bold">

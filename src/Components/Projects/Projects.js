@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Projects.css";
+import { projectData } from "../../ObjectData";
+import { IoLogoGithub } from "react-icons/io5";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import randomColor from "randomcolor";
 
 function Projects() {
   const [selectedId, setSelectedId] = useState(null);
-  const items = [
-    { id: "1", title: "E-commerce", subtitle: "Subtitle 1" },
-    { id: "2", title: "Billater", subtitle: "Subtitle 2" },
-    { id: "3", title: "Drinkology", subtitle: "Subtitle 3" },
-    { id: "4", title: "Task Management App", subtitle: "Subtitle 3" },
-    { id: "5", title: "JobBoard", subtitle: "Subtitle 3" },
-    { id: "6", title: "Weather App", subtitle: "Subtitle 3" },
-  ];
+
+  const randomStyle = {
+    backgroundColor: randomColor({ luminosity: "light" }),
+  };
 
   // Function to toggle selectedId
   const toggleSelectedId = (id) => {
@@ -22,42 +22,127 @@ function Projects() {
     }
   };
   return (
-    <div id="projects" className="ProjectsContainer Container py-10 ">
-      Projects
-      <div className="w-[1200px] bg-red-200 grid grid-cols-3 h-[40rem] relative">
-        {items.map((item) => (
-          <motion.div
-            key={item.id}
-            layoutId={item.id}
-            onClick={() => toggleSelectedId(item.id)}
-            className="item"
-            style={{
-              opacity: !selectedId ? 1 : 0.5, // Lower opacity for unselected items
-            }}
-          >
-            <motion.h5>{item.subtitle}</motion.h5>
-            <motion.h2>{item.title}</motion.h2>
-            <motion.div>Image</motion.div>
-          </motion.div>
-        ))}
+    <div
+      id="projects"
+      className="ProjectsContainer Container min-h-screen py-10 "
+    >
+      <h1 className="w-[1200px] font-bold text-4xl pb-5 text-start">
+        Projects
+      </h1>
+      <div className="w-[1200px] bg-gray-100  grid grid-cols-3 relative">
+        <AnimatePresence>
+          {projectData.map((item) => (
+            <motion.div
+              key={item.id}
+              layoutId={item.id}
+              onClick={() => toggleSelectedId(item.id)}
+              className="item flex flex-col bg-white"
+              style={{
+                opacity: !selectedId ? 1 : 0.5, // Lower opacity for unselected items
+              }}
+            >
+              <div>
+                <span className="flex items-center justify-between">
+                  <h2 className=" font-bold text-xl">{item.title}</h2>
+                  <div className="flex gap-2 text-lg">
+                    {item.links.github && (
+                      <a href={item.links.github} className="hover:scale-125">
+                        <IoLogoGithub />
+                      </a>
+                    )}
+                    {item.links.demo && (
+                      <a href={item.links.demo} className="hover:scale-125">
+                        <FaExternalLinkAlt />
+                      </a>
+                    )}
+                  </div>
+                </span>
+                <p className="py-2">{item.shortDesc}</p>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full shadow-md h-[15rem] rounded-md object-cover object-left-top overflow-hidden"
+                />
+              </div>
+
+              {/* tech */}
+              <div className="flex gap-2 overflow-auto py-2">
+                {item.tech.map((tech, index) => (
+                  <p
+                    className="py-1 px-2 rounded-md text-nowrap font-semibold text-gray-900"
+                    style={{
+                      backgroundColor: randomColor({ luminosity: "light" }),
+                    }}
+                  >
+                    {tech.toUpperCase()}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+
         <AnimatePresence>
           {selectedId && (
-            <motion.div
-              layoutId={selectedId}
-              className="expanded-item"
-              transition={{ duration: 0.3 }}
-            >
-              {items
+            <motion.div layoutId={selectedId} className="expanded-item">
+              {projectData
                 .filter((item) => item.id === selectedId)
                 .map((item) => (
-                  <div key={item.id}>
-                    <motion.h5>{item.subtitle}</motion.h5>
-                    <motion.h2>{item.title}</motion.h2>
-                    <motion.p>{item.title}</motion.p>
-
-                    <motion.button onClick={() => toggleSelectedId(item.id)}>
+                  <div
+                    key={item.id}
+                    className="relative flex-1 p-5 flex flex-col justify-between h-full shadow-xl"
+                  >
+                    <button
+                      className="absolute top-0 right-0 m-2"
+                      onClick={() => toggleSelectedId(item.id)}
+                    >
                       Close
-                    </motion.button>
+                    </button>
+                    <h2 className=" font-bold text-4xl text-center">
+                      {item.title}
+                    </h2>
+                    <p className="py-2  font-semibold">{item.description}</p>
+                    <div className="overflow-hidden my-2 border-2 shadow-md">
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full h-full rounded-md object-cover object-top hover:object-bottom duration-[5000ms] cursor-pointer"
+                      />
+                    </div>
+
+                    <div className="flex items-start justify-between">
+                      {/* tech */}
+                      <div className="flex gap-2 flex-wrap ">
+                        {item.tech.map((tech, index) => (
+                          <p
+                            className="py-1 px-2 rounded-md text-nowrap font-semibold text-gray-900"
+                            style={{
+                              backgroundColor: randomColor({
+                                luminosity: "light",
+                              }),
+                            }}
+                          >
+                            {tech.toUpperCase()}
+                          </p>
+                        ))}
+                      </div>
+                      {/* links */}
+                      <div className="flex gap-2 text-2xl mt-2">
+                        {item.links.github && (
+                          <a
+                            href={item.links.github}
+                            className="hover:scale-125"
+                          >
+                            <IoLogoGithub />
+                          </a>
+                        )}
+                        {item.links.demo && (
+                          <a href={item.links.demo} className="hover:scale-125">
+                            <FaExternalLinkAlt />
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 ))}
             </motion.div>
