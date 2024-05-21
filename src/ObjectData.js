@@ -3,6 +3,7 @@ import drinkology from "./Assets/Images/drinkology.png";
 import taskmanagement from "./Assets/Images/taskmanagement.png";
 import jobboard from "./Assets/Images/jobboard.png";
 import weatherapp from "./Assets/Images/weatherapp.png";
+import billater from "./Assets/Images/billater.png";
 
 export const projectData = [
   {
@@ -61,7 +62,7 @@ export const projectData = [
       github: "https://github.com/apekul/billater",
       demo: "",
     },
-    img: "",
+    img: billater,
   },
 
   {

@@ -3,10 +3,10 @@ import { FaCode } from "react-icons/fa6";
 import MobileNav from "./MobileNav";
 
 const nav = [
-  { text: "Home", location: "" },
-  { text: "About", location: "" },
-  { text: "Projects", location: "" },
-  { text: "Contact", location: "" },
+  { text: "home", direction: "hero" },
+  { text: "about", direction: "about" },
+  { text: "projects", direction: "projects" },
+  { text: "contact", direction: "contact" },
 ];
 
 function Navbar() {
@@ -34,22 +34,24 @@ function Navbar() {
   }, []);
   return (
     <nav
-      className={`Container h-[3rem] flex items-center fixed w-full z-10 transition-colors duration-200 ${
+      className={`Container h-[3rem] flex items-center fixed w-full z-10 transition-colors duration-200 select-none ${
         scrolled ? "bg-white shadow-md text-black" : "text-white"
       }`}
     >
       <ul className="flex items-center justify-between w-full">
         <li>
-          <FaCode size={25} />
+          <a href="#hero">
+            <FaCode size={25} />
+          </a>
         </li>
         <li className="gap-5 hidden lg:flex">
           {nav.map((v, i) => (
             <a
               key={i}
-              href="/"
+              href={`#${v.direction}`}
               className="font-bold hover:text-blue-600 text-lg transition-all duration-150"
             >
-              {v.text}
+              {v.text.toUpperCase()}
             </a>
           ))}
         </li>

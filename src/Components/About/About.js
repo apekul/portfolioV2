@@ -6,7 +6,7 @@ function About() {
   return (
     <section
       id="about"
-      className="h-auto Container flex items-center justify-center py-20"
+      className="min-h-screen Container flex items-center justify-center "
     >
       <div className="flex flex-col-reverse lg:flex-row gap-5 max-w-[1200px] w-full">
         <div className="w-full lg:w-1/3 p-5 gap-5 rounded-md text-center">

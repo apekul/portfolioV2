@@ -39,14 +39,18 @@ function Hero() {
             </li>
             <li className="flex items-center gap-2 text-3xl">
               <a
-                href="/"
+                href="https://www.linkedin.com/in/adam-p%C4%99kul/"
+                target="_blank"
                 className="hover:scale-125 scla cursor-pointer transition-all duration-150 hover:text-blue-500"
+                rel="noreferrer"
               >
                 <IoLogoLinkedin />
               </a>
               <a
-                href="/"
+                href="https://github.com/apekul"
+                target="_blank"
                 className="hover:scale-125 cursor-pointer transition-all duration-150 hover:text-blue-500"
+                rel="noreferrer"
               >
                 <IoLogoGithub />
               </a>
