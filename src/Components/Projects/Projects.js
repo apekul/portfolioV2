@@ -26,10 +26,8 @@ function Projects() {
       id="projects"
       className="ProjectsContainer Container min-h-screen py-20"
     >
-      <h1 className="w-[1200px] font-bold text-4xl pb-5 text-start">
-        Projects
-      </h1>
-      <div className="w-[1200px] grid grid-cols-3 relative gap-10 ">
+      <h1 className=" font-bold text-4xl pb-5 text-start">Projects</h1>
+      <div className="w-full xl:w-[1200px] grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 relative gap-10 ">
         <AnimatePresence>
           {projectData.map((item) => (
             <motion.div
@@ -80,7 +78,10 @@ function Projects() {
 
         <AnimatePresence>
           {selectedId && (
-            <motion.div layoutId={selectedId} className="expanded-item">
+            <motion.div
+              layoutId={selectedId}
+              className="expanded-item lg:h-[40rem] h-2/3 lg:w-[60rem] w-full "
+            >
               {projectData
                 .filter((item) => item.id === selectedId)
                 .map((item) => (
@@ -94,10 +95,10 @@ function Projects() {
                     >
                       Close
                     </button>
-                    <h2 className=" font-bold text-4xl text-center">
+                    <h2 className="font-bold lg:text-4xl text-2xl text-start lg:text-center">
                       {item.title}
                     </h2>
-                    <p className="py-2  font-semibold">{item.description}</p>
+                    <p className="py-2 font-semibold ">{item.description}</p>
                     <div className="overflow-hidden my-2 border-2 shadow-md">
                       <img
                         src={item.img}
@@ -111,6 +112,7 @@ function Projects() {
                       <div className="flex gap-2 flex-wrap ">
                         {item.tech.map((tech, index) => (
                           <p
+                            key={index}
                             className="py-1 px-2 rounded-md text-nowrap font-semibold text-gray-900"
                             style={{
                               backgroundColor: randomColor({
