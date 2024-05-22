@@ -7,7 +7,11 @@ const MobileNav = ({ nav }) => {
 
   return (
     <nav className="flex justify-end font-bold text-zinc-600 w-full">
-      <GiHamburgerMenu size="30" onClick={() => setShowNav(true)} />
+      <GiHamburgerMenu
+        size="30"
+        onClick={() => setShowNav(true)}
+        className="cursor-pointer"
+      />
       <ul
         className={`absolute flex lg:hidden flex-col items-end top-0 bg-zinc-100 text-3xl w-screen h-screen px-4 pt-3 gap-10 duration-500 transition-all
       ${showNav ? "right-0" : "-right-full"}
