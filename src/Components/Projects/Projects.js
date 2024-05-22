@@ -9,10 +9,6 @@ import randomColor from "randomcolor";
 function Projects() {
   const [selectedId, setSelectedId] = useState(null);
 
-  const randomStyle = {
-    backgroundColor: randomColor({ luminosity: "light" }),
-  };
-
   // Function to toggle selectedId
   const toggleSelectedId = (id) => {
     if (selectedId) {
