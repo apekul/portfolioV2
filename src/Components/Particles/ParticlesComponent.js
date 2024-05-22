@@ -102,6 +102,9 @@ export const ParticlesComponent = () => {
     }),
     []
   );
+  if (!init) {
+    return null; // Render nothing until initialization is complete
+  }
 
   return (
     <>
