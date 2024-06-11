@@ -4,6 +4,7 @@ import taskmanagement from "./Assets/Images/taskmanagement.png";
 import jobboard from "./Assets/Images/jobboard.png";
 import weatherapp from "./Assets/Images/weatherapp.png";
 import billater from "./Assets/Images/billater.png";
+import recipebook from "./Assets/Images/recipebook.png";
 
 export const projectData = [
   {
@@ -20,7 +21,7 @@ export const projectData = [
     img: ecommerce,
   },
   {
-    id: "3",
+    id: "2",
     title: "Drinkology",
     shortDesc: "Drink/Cocktail database website",
     description:
@@ -33,7 +34,20 @@ export const projectData = [
     img: drinkology,
   },
   {
-    id: "6",
+    id: "3",
+    title: "RecipeBook",
+    shortDesc: "Recipe Book application built with Angular.",
+    description:
+      "Recipe Book application built with Angular. The application allows users to view, add, edit, and delete recipes. It's a great way to keep all your favorite recipes in one place and access them easily.",
+    tech: ["angular", "tailwindcss", "ngrx", "rxjs"],
+    links: {
+      github: "https://github.com/apekul/recipebook",
+      demo: "https://recipebookdemo.netlify.app/",
+    },
+    img: recipebook,
+  },
+  {
+    id: "4",
     title: "Weather App",
     shortDesc: "Current and forecast weather application",
     description: "Current and forecast weather application",
@@ -52,7 +66,7 @@ export const projectData = [
     img: weatherapp,
   },
   {
-    id: "2",
+    id: "5",
     title: "Billater",
     shortDesc: "Mobile expense-splitting app",
     description:
@@ -66,7 +80,7 @@ export const projectData = [
   },
 
   {
-    id: "4",
+    id: "6",
     title: "Task Management",
     shortDesc: "Task management application",
     description:
@@ -79,7 +93,7 @@ export const projectData = [
     img: taskmanagement,
   },
   {
-    id: "5",
+    id: "7",
     title: "JobBoard",
     shortDesc: "Job board web application",
     description:
@@ -91,4 +105,5 @@ export const projectData = [
     },
     img: jobboard,
   },
+
 ];
