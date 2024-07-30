@@ -22,13 +22,16 @@ function About() {
             </div>
           </div>
           <p className="py-2 text-xl font-semibold">
-            Aspiring Frontend Developer with three years of hands-on experience
-            in JavaScript and React, complemented by a strong foundation in web
-            development projects. <br /> <br /> I'm focused on delivering
-            excellent communication and demonstrating a keen eye for detail.
-            Passionate about creating intuitive and responsive user interfaces,
-            I'm eager to leverage my substantial frontend experience to
-            contribute to innovative development teams.
+            Freelance Frontend Developer with three years of hands-on experience
+            in JavaScript and React, and a solid foundation in web development
+            projects. I specialize in delivering high-quality, responsive user
+            interfaces with a strong focus on excellent communication and
+            meticulous attention to detail. <br /> <br /> Passionate about
+            creating intuitive and visually appealing web experiences, I am
+            eager to collaborate with innovative teams and clients to bring
+            their ideas to life. My goal is to leverage my extensive frontend
+            experience to deliver exceptional results on diverse freelance
+            projects.
           </p>
         </div>
       </div>
