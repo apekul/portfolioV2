@@ -8,7 +8,6 @@ import randomColor from "randomcolor";
 
 function Projects() {
   const [selectedId, setSelectedId] = useState(null);
-  // COmment ins new_projects branch
   // Function to toggle selectedId
   const toggleSelectedId = (id) => {
     if (selectedId) {
@@ -23,133 +22,111 @@ function Projects() {
       className="ProjectsContainer Container min-h-screen py-20"
     >
       <h1 className=" font-bold text-4xl pb-5 text-start">Projects</h1>
-      <div className="w-full xl:w-[1200px] grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 relative gap-10 ">
-        <AnimatePresence>
-          {projectData.map((item) => (
-            <motion.div
-              key={item.id}
-              layoutId={item.id}
-              onClick={() => toggleSelectedId(item.id)}
-              className="item flex flex-col bg-white shadow-md p-5"
-              style={{
-                opacity: !selectedId ? 1 : 0.5, // Lower opacity for unselected items
-              }}
-            >
-              <div>
-                <span className="flex items-center justify-between">
-                  <h2 className=" font-bold text-xl">{item.title}</h2>
-                  <div className="flex gap-3 text-xl">
-                    {item.links.github && (
-                      <a
-                        href={item.links.github}
-                        target="_blank"
-                        className="hover:scale-125 transition-all ease-in-out duration-150 hover:text-blue-500"
-                        rel="noreferrer"
-                      >
-                        <IoLogoGithub />
-                      </a>
-                    )}
-                    {item.links.demo && (
-                      <a
-                        href={item.links.demo}
-                        target="_blank"
-                        className="hover:scale-125 transition-all ease-in-out duration-150 hover:text-blue-500"
-                        rel="noreferrer"
-                      >
-                        <FaExternalLinkAlt />
-                      </a>
-                    )}
-                  </div>
-                </span>
-                <p className="py-2">{item.shortDesc}</p>
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full shadow-md h-[15rem] rounded-md object-cover object-left-top overflow-hidden"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+      {/* <ul className="bg-red-200 w-full xl:w-[1200px] grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 relative gap-5 "> */}
+      {/* {projectData.map((project, index) => (
+          <li className="bg-blue-200">
+            <img />
+            <header>
+              <p>title</p>
+              <p>shortDesc</p>
+              <p>Tech</p>
+            </header>
+          </li>
+        ))} */}
 
-        <AnimatePresence>
-          {selectedId && (
-            <motion.div
-              layoutId={selectedId}
-              className="expanded-item lg:h-[40rem] h-2/3 lg:w-[60rem] w-full "
-            >
-              {projectData
-                .filter((item) => item.id === selectedId)
-                .map((item) => (
-                  <div
-                    key={item.id}
-                    className="relative flex-1 p-5 flex flex-col justify-between h-full shadow-xl"
-                  >
-                    <button
-                      className="absolute top-0 right-0 m-2"
-                      onClick={() => toggleSelectedId(item.id)}
-                    >
-                      Close
-                    </button>
-                    <h2 className="font-bold lg:text-4xl text-2xl text-start lg:text-center">
-                      {item.title}
-                    </h2>
-                    <p className="py-2 font-semibold ">{item.description}</p>
-                    <div className="overflow-hidden my-2 border-2 shadow-md">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-full rounded-md object-cover object-top hover:object-bottom duration-[10000ms] cursor-pointer"
-                      />
-                    </div>
-
-                    <div className="flex items-start justify-between">
-                      {/* tech */}
-                      <div className="flex gap-2 flex-wrap ">
-                        {item.tech.map((tech, index) => (
-                          <p
-                            key={index}
-                            className="py-1 px-2 rounded-md text-nowrap font-semibold text-gray-900"
-                            style={{
-                              backgroundColor: randomColor({
-                                luminosity: "light",
-                              }),
-                            }}
-                          >
-                            {tech.toUpperCase()}
-                          </p>
-                        ))}
-                      </div>
-                      {/* links */}
-                      <div className="flex gap-3 text-2xl mt-2">
-                        {item.links.github && (
-                          <a
-                            href={item.links.github}
-                            target="_blank"
-                            className="hover:scale-125 transition-all ease-in-out duration-150 hover:text-blue-500"
-                            rel="noreferrer"
-                          >
-                            <IoLogoGithub />
-                          </a>
-                        )}
-                        {item.links.demo && (
-                          <a
-                            href={item.links.demo}
-                            target="_blank"
-                            className="hover:scale-125 transition-all ease-in-out duration-150 hover:text-blue-500"
-                            rel="noreferrer"
-                          >
-                            <FaExternalLinkAlt />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full xl:w-[1200px]">
+        {Array.from({ length: 3 }, (_, index) => index).map((column, i) => {
+          const sliceProjects = projectData.filter(
+            (_, index) => (index - column) % 3 === 0
+          );
+          return (
+            <div className="flex flex-col gap-10" key={i}>
+              {sliceProjects.map((project, projectIndex) => (
+                <div className="border-2 p-10" key={projectIndex}>
+                  <div>{project.id}</div>
+                  <img
+                    className="h-auto  rounded-lg object-cover"
+                    src={project.img}
+                    alt=""
+                  />
+                </div>
+              ))}
+            </div>
+          );
+        })}
+        {/* <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+              alt=""
+            />
+          </div>
+        </div> */}
+        {/*  */}
       </div>
+
+      {/* </ul> */}
     </div>
   );
 }
