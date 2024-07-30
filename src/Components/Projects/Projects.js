@@ -8,7 +8,7 @@ import randomColor from "randomcolor";
 
 function Projects() {
   const [selectedId, setSelectedId] = useState(null);
-
+  // COmment ins new_projects branch
   // Function to toggle selectedId
   const toggleSelectedId = (id) => {
     if (selectedId) {
