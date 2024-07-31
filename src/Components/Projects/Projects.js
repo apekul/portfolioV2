@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { projectData } from "../../ObjectData";
 import { IoLogoGithub } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
