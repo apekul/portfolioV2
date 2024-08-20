@@ -37,7 +37,7 @@ export const ParticlesComponent = () => {
           value: "#27272A",
         },
       },
-      fpsLimit: 60,
+      fpsLimit: 20,
       interactivity: {
         events: {
           onClick: {

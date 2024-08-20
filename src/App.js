@@ -7,7 +7,7 @@ import Projects from "./Components/Projects/Projects";
 
 function App() {
   return (
-    <div className="App flex flex-col min-h-screen min-w-screen ">
+    <div className="flex flex-col min-h-screen min-w-screen ">
       <Navbar />
       <div className="flex-1">
         <Hero />

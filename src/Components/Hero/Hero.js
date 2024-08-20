@@ -7,7 +7,7 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="lg:h-screen h-full relative overflow-hidden shadow-md shadow-black"
+      className="lg:h-auto h-full flex items-center justify-center relative overflow-hidden shadow-md shadow-black"
     >
       <div
         className="particles-container"
@@ -22,7 +22,7 @@ function Hero() {
       >
         <ParticlesComponent />
       </div>
-      <div className="Container h-full my-20 lg:my-0 w-auto flex items-center justify-center">
+      <div className="Container h-full lg:py-52 my-20 lg:my-0 w-auto flex items-center justify-center">
         <div
           className={`flex text-white p-5 rounded-md  flex-col-reverse lg:flex-row gap-3 items-center lg:items-start`}
         >

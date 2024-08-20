@@ -34,11 +34,11 @@ function Navbar() {
   }, []);
   return (
     <nav
-      className={`Container h-[3rem] flex items-center fixed w-full z-10 transition-colors duration-200 select-none ${
+      className={`h-[3rem] flex items-center fixed justify-center w-full z-10 transition-colors duration-200 select-none ${
         scrolled ? "bg-white shadow-md text-black" : "text-white"
       }`}
     >
-      <ul className="flex items-center justify-between w-full">
+      <ul className="flex items-center justify-between w-full Container">
         <li>
           <a href="#hero">
             <FaCode size={25} />
