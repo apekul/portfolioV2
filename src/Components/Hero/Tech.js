@@ -19,13 +19,19 @@ const Tech = () => {
       </li>
       <li className="hover:scale-110 duration-200 ease-in-out cursor-pointer">
         <img
-          src="https://skillicons.dev/icons?i=react,express&perline=1"
+          src="https://skillicons.dev/icons?i=react,nextjs&perline=1"
           alt="icon"
         />
       </li>
       <li className="hover:scale-110 duration-200 ease-in-out cursor-pointer">
         <img
-          src="https://skillicons.dev/icons?i=tailwindcss,sass&perline=1"
+          src="https://skillicons.dev/icons?i=angular,nodejs&perline=1"
+          alt="icon"
+        />
+      </li>
+      <li className="hover:scale-110 duration-200 ease-in-out cursor-pointer">
+        <img
+          src="https://skillicons.dev/icons?i=tailwindcss,materialui&perline=1"
           alt="icon"
         />
       </li>
