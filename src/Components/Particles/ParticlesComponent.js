@@ -34,7 +34,7 @@ export const ParticlesComponent = () => {
       },
       background: {
         color: {
-          value: "#27272A",
+          value: "transparent",
         },
       },
       fpsLimit: 20,

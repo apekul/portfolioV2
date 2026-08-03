@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
+import Experience from "./Components/Experience/Experience";
 import Projects from "./Components/Projects/Projects";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div className="flex-1">
         <Hero />
         <About />
+        <Experience />
         <Projects />
       </div>
       <Footer />

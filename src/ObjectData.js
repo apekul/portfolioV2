@@ -9,12 +9,33 @@ import multiStepForm from "./Assets/Images/multiStepForm.png";
 import restCountriesApi from "./Assets/Images/restCountriesApi.png";
 import interactiveCommentsSection from "./Assets/Images/interactiveCommentsSection.png";
 import bookmarkLandingPage from "./Assets/Images/bookmarkLandingPage.png";
+import jobboardangular from "./Assets/Images/jobboardangular.png";
 
 export const projectData = [
   {
     id: "1",
+    title: "Job Board Angular",
+    shortDesc:
+      "Full-stack job board inspired by JustJoinIT. Angular 21 (Signals, standalone) + TailwindCSS frontend with an Express + TypeScript API and a PostgreSQL database on Neon. Features URL-synced search, filters and favorites.",
+    tech: [
+      "angular",
+      "typescript",
+      "tailwindcss",
+      "express",
+      "nodejs",
+      "postgresql",
+    ],
+    links: {
+      github: "https://github.com/apekul/job-board-angular",
+      demo: "https://job-board-angular.vercel.app/jobs",
+    },
+    img: jobboardangular,
+  },
+  {
+    id: "2",
     title: "JobBoard",
-    shortDesc: "Job board web application",
+    shortDesc:
+      "Job board web application built with React and Redux that lets users search, filter and paginate through job listings.",
     tech: ["react", "tailwindcss", "redux"],
     links: {
       github: "https://github.com/apekul/job-Board",
@@ -23,9 +44,10 @@ export const projectData = [
     img: jobboard,
   },
   {
-    id: "2",
+    id: "3",
     title: "Billater",
-    shortDesc: "Mobile expense-splitting app",
+    shortDesc:
+      "React Native app similar to Splitwise for tracking shared expenses and splitting bills with friends, roommates or colleagues.",
     tech: ["react native", "momentjs", "context api", "expo"],
     links: {
       github: "https://github.com/apekul/billater",
@@ -36,7 +58,8 @@ export const projectData = [
   {
     id: "4",
     title: "Task Management",
-    shortDesc: "Task management application",
+    shortDesc:
+      "Kanban-style task management app with drag-and-drop boards, progress tracking and charts to visualize workload.",
     tech: ["react", "tailwindcss", "react-beautiful-dnd", "chartjs"],
     links: {
       github: "https://github.com/apekul/task_management",
@@ -45,9 +68,10 @@ export const projectData = [
     img: taskmanagement,
   },
   {
-    id: "3",
+    id: "5",
     title: "Weather App",
-    shortDesc: "Current and forecast weather application",
+    shortDesc:
+      "Current conditions and forecast weather app powered by the OpenWeather API, with interactive maps and temperature charts.",
     tech: [
       "react",
       "tailwindcss",
@@ -62,11 +86,11 @@ export const projectData = [
     },
     img: weatherapp,
   },
-
   {
-    id: "5",
+    id: "6",
     title: "E-commerce",
-    shortDesc: "A minimalist app imitating an online store",
+    shortDesc:
+      "A minimalist app imitating an online store with product catalog, filtering and cart management.",
     tech: ["react", "scss"],
     links: {
       github: "https://github.com/apekul/e-commerce",
@@ -75,9 +99,10 @@ export const projectData = [
     img: ecommerce,
   },
   {
-    id: "6",
+    id: "7",
     title: "Drinkology",
-    shortDesc: "Drink/Cocktail database website",
+    shortDesc:
+      "Drink and cocktail database website with a friendly one-page design for browsing and discovering new recipes.",
     tech: ["react", "tailwindcss", "react-router"],
     links: {
       github: "https://github.com/apekul/drinkology",
@@ -86,9 +111,10 @@ export const projectData = [
     img: drinkology,
   },
   {
-    id: "7",
+    id: "8",
     title: "RecipeBook",
-    shortDesc: "Recipe Book application built with Angular.",
+    shortDesc:
+      "Recipe book application built with Angular that lets users view, add, edit and delete their favorite recipes in one place.",
     tech: ["angular", "tailwindcss", "ngrx", "rxjs"],
     links: {
       github: "https://github.com/apekul/recipebook",
@@ -97,9 +123,10 @@ export const projectData = [
     img: recipebook,
   },
   {
-    id: "8",
+    id: "9",
     title: "Multi-step Form",
-    shortDesc: "Multi-step form built with React",
+    shortDesc:
+      "Multi-step form built with React that guides users through a flow with validation and a final summary screen.",
     tech: ["react", "tailwindcss"],
     links: {
       github: "https://github.com/apekul/multi-step-form-main",
@@ -108,10 +135,11 @@ export const projectData = [
     img: multiStepForm,
   },
   {
-    id: "9",
+    id: "10",
     title: "REST Countries API",
-    shortDesc: "Application that displays country data from REST API.",
-    tech: ["react", "tailwindcss", "reacr-router", "lodash"],
+    shortDesc:
+      "React app displaying country data from the REST Countries API, with search, region filtering and detailed country pages.",
+    tech: ["react", "tailwindcss", "react-router", "lodash"],
     links: {
       github: "https://github.com/apekul/rest-countries-api",
       demo: "https://apekul.github.io/rest-countries-api/",
@@ -119,20 +147,22 @@ export const projectData = [
     img: restCountriesApi,
   },
   {
-    id: "10",
+    id: "11",
     title: "Interactive comments section",
-    shortDesc: "Interactive comments section with CRUD operations.",
+    shortDesc:
+      "Interactive comments section with full CRUD operations - add, edit, delete and vote on comments and replies.",
     tech: ["react", "tailwindcss"],
     links: {
-      github: "https://apekul.github.io/interactive-comments-section/",
-      demo: "https://apekul.github.io/rest-countries-api/",
+      github: "https://github.com/apekul/interactive-comments-section",
+      demo: "https://apekul.github.io/interactive-comments-section/",
     },
     img: interactiveCommentsSection,
   },
   {
-    id: "11",
+    id: "12",
     title: "Bookmark landing page",
-    shortDesc: "Landing page that closely resembles the provided design.",
+    shortDesc:
+      "Landing page that closely mirrors the provided design, with tabbed feature sections and a fully responsive layout.",
     tech: ["react", "tailwindcss"],
     links: {
       github: "https://github.com/apekul/Bookmark-landing-page",
